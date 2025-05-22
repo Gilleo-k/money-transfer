@@ -2,13 +2,20 @@
 3- write a script that will take user's zip code and check if the zip code has 5 digit 
 if yes display valid zip code if not display in valid zip code
 """
-
+"""
 f_name = input("Enter your name: ")
- print(f" Hallo {f_name} please enter your zip
-username = input("Enter your username: ")
-password = input("Enter your password: ")
+zip_code = input("Enter your zip code: ")
 
-if username and password != 'admin':
-    print(f"{f_name} you have entered a wrong credentials please try again")
+
+if len(zip_code) == 5:
+    print(f"{f_name} you have entered a valid zip code: {zip_code}")
 else:
-    print("valid credentials good Job")
+    print("in valid zip code") """
+
+zip_code = input("Enter your zip code: ")
+if not zip_code.isdigit():
+    print("Invalid zip code")
+elif len(zip_code) != 5:
+    print("Invalid zip code")
+else:
+    print("Valide zip code")    

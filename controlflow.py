@@ -7,4 +7,5 @@ if '@' in 'gillekevinn@gmail.com':
 else:
     print("invalid email")
 
- 
+for item in 'computer':
+     print(item)

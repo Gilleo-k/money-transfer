@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request, jsonify
 
-app = Flask(name)
+app = Flask(__name__)
 
-Configuration,
+# Configuration
 SENDING_FEES = 0.02
 EXCHANGE_RATE = 655
 
@@ -14,12 +14,12 @@ def index():
 def calculate():
     try:
         user_amount = float(request.form['amount'])
-
-Calculations,
+        
+        # Calculations
         fee_amount = SENDING_FEES * user_amount
         amount_plus_fees = user_amount + fee_amount
         receiving_amount = EXCHANGE_RATE * user_amount
-
+        
         return jsonify({
             'success': True,
             'amount_plus_fees': f"${amount_plus_fees:,.2f}",
@@ -29,5 +29,5 @@ Calculations,
     except:
         return jsonify({'success': False, 'message': 'Please enter a valid amount'})
 
-if name == 'main':
+if __name__ == '__main__':
     app.run(debug=True)
